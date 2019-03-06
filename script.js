@@ -142,10 +142,17 @@ let array = [
     }];
 
 
-console.log(array.sort((a, b) => a.height > b.height ? 1 : -1));
-
-let sumOfWeights = 0;
-for (let i = 0; i < array.length; i++) {
-    sumOfWeights += array[i].mass;
+function SortByHeight(arrayOfCharacters){
+    return(arrayOfCharacters.sort((a, b) => a.height > b.height ? 1 : -1));
 }
-console.log(sumOfWeights / array.length);
+
+function AverageWeight(arrayOfCharacters){
+    let sumOfWeights = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumOfWeights += array[i].mass;
+    }
+    return(sumOfWeights / array.length);
+}
+
+console.log("Sorted by height:\n", SortByHeight(array));
+console.log("Average weight of characters:", AverageWeight(array));
